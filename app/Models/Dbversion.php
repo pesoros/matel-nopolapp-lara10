@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vehicle_number extends Model
+class Dbversion extends Model
 {
     use HasFactory;
-    protected $connection = 'sqlite';
-    protected $table = 'vehicle_number';
     protected $fillable = [
-        'nopol', 'model_kendaraan'
+        'version', 'path','updated_by'
     ];
     protected $hidden = ['id','created_at','updated_at'];
 }

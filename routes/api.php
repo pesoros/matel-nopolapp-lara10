@@ -34,6 +34,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('nopol/import', 'importNopol');
     });
     Route::controller(DbCopyController::class)->group(function(){
-        Route::get('dbcopy/copy', 'copyingDB');
+        Route::get('db/checkversion', 'checkVersion');
+        Route::get('db/copy', 'copyingDB');
     });
 });
