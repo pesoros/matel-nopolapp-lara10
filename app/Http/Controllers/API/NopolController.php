@@ -37,4 +37,16 @@ class NopolController extends BaseController
 
         return $this->sendResponse([], 'success');
     }
+
+    public function importNopolLoop(Request $request): JsonResponse
+    {
+		$this->validate($request, [
+			'file' => 'required|mimes:csv,xls,xlsx'
+		]);
+ 
+		$file = $request->file('file');
+        $datas = Excel::toArray(new NopolImport, $request->file('file'));
+
+        return $this->sendResponse($datas, 'success');
+    }
 }
