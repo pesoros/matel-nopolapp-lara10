@@ -25,6 +25,8 @@ class NopolController extends BaseController
 		$this->validate($request, [
 			'file' => 'required|mimes:csv,xls,xlsx'
 		]);
+
+        $tableTrincate = Vehicle_number::truncate();
  
 		$file = $request->file('file');
         Excel::import(new NopolImport, $request->file('file'));
