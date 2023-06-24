@@ -11,7 +11,17 @@ class Vehicle_number extends Model
     protected $connection = 'sqlite';
     protected $table = 'vehicle_number';
     protected $fillable = [
-        'nopol', 'model_kendaraan'
+        'nopol', 
+        'unit',
+        'finance',
+        'cabang',
+        'no_rangka',
+        'no_mesin',
+        'tahun',
+        'warna',
+        'overdue',
+        'saldo',
+        'nama',
     ];
     protected $hidden = ['id','created_at','updated_at'];
 }

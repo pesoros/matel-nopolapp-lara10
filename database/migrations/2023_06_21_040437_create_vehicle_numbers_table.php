@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::connection('sqlite')->create('vehicle_number', function (Blueprint $table) {
             $table->id();
-            $table->string('nopol');
-            $table->text('model_kendaraan');
+            $table->string('nopol')->default('-');;
+            $table->text('unit')->default('-');;
+            $table->text('finance')->default('-');;
+            $table->text('cabang')->default('-');;
+            $table->text('no_rangka')->default('-');;
+            $table->text('no_mesin')->default('-');;
+            $table->text('tahun')->default('-');;
+            $table->text('warna')->default('-');;
+            $table->text('overdue')->default('-');;
+            $table->text('saldo')->default('-');;
+            $table->text('nama')->default('-');;
             $table->timestamps();
         });
     }

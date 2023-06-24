@@ -20,8 +20,17 @@ class Vehicle_numberFactory extends Factory
     public function definition(): array
     {
         return [
-            'nopol' => Str::random(2).' '.random_int(1000, 9999).' '.Str::random(3),
-            'model_kendaraan' => Str::random(3).' '.Str::random(6),
+            'nopol' => Str::random(2).' '.random_int(1000, 9999).' '.Str::random(3), 
+            'unit' => Str::random(3).' '.Str::random(6),
+            'finance' => Str::random(3).' '.Str::random(6),
+            'cabang' => Str::random(3).' '.Str::random(6),
+            'no_rangka' => Str::random(3).' '.Str::random(6),
+            'no_mesin' => Str::random(3).' '.Str::random(6),
+            'tahun' => Str::random(3).' '.Str::random(6),
+            'warna' => Str::random(3).' '.Str::random(6),
+            'overdue' => Str::random(3).' '.Str::random(6),
+            'saldo' => Str::random(3).' '.Str::random(6),
+            'nama' => Str::random(3).' '.Str::random(6),
         ];
     }
 }

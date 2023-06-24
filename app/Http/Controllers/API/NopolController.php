@@ -20,13 +20,17 @@ class NopolController extends BaseController
         return $this->sendResponse($getData, 'success');
     }
 
+    function truncateNopol(): JsonResponse
+    {
+        $tableTruncate = Vehicle_number::truncate();
+        return $this->sendResponse([], 'success');
+    }
+
     public function importNopol(Request $request): JsonResponse
     {
 		$this->validate($request, [
 			'file' => 'required|mimes:csv,xls,xlsx'
 		]);
-
-        $tableTrincate = Vehicle_number::truncate();
  
 		$file = $request->file('file');
         Excel::import(new NopolImport, $request->file('file'));

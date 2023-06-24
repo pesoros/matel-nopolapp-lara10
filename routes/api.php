@@ -31,6 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
     Route::controller(NopolController::class)->group(function(){
         Route::get('nopol/search', 'getNopol');
+        Route::get('nopol/truncate', 'truncateNopol');
         Route::post('nopol/import', 'importNopol');
     });
     Route::controller(DbCopyController::class)->group(function(){
