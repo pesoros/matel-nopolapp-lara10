@@ -41,6 +41,11 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'dump' => [
+                'use_single_transaction',
+                'exclude_tables' => ['migrations', 'users', 'password_reset_tokens', 'failed_jobs', 'personal_access_tokens'],
+                'add_extra_option' => '--optionname=optionvalue', // for example '--column-statistics=0'
+             ]     
         ],
 
         'mysql' => [
