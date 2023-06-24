@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\HomeController;
 use App\Http\Controllers\API\NopolController;
+use App\Http\Controllers\API\DbCopyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::controller(NopolController::class)->group(function(){
         Route::get('nopol/search', 'getNopol');
         Route::post('nopol/import', 'importNopol');
+    });
+    Route::controller(DbCopyController::class)->group(function(){
+        Route::get('dbcopy/copy', 'copyingDB');
     });
 });
